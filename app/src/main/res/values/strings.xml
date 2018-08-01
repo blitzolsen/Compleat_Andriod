@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Compleat_Andriod</string>
+    <string name="tab_text_1">Cookbook</string>
+    <string name="tab_text_2">Shopping List</string>
+    <string name="tab_text_3">Food Inventory</string>
+    <string name="tab_text_4">Make Now</string>
+    <string name="action_settings">Settings</string>
+    <string name="section_format">Hello World from section: %1$d</string>
+</resources>
