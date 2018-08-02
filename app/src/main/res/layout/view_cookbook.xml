@@ -34,7 +34,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/addRecipesToShoppingList">
+        app:layout_constraintTop_toBottomOf="@+id/addRecipe">
 
     </ListView>
 
@@ -52,14 +52,14 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
-        android:id="@+id/addRecipesToShoppingList"
+        android:id="@+id/addRecipe"
         android:layout_width="40dp"
         android:layout_height="40dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
         android:layout_marginTop="32dp"
         android:background="@color/colorAccent"
-        android:onClick="addAnotherRecipeToBrowser"
+        android:onClick="addRecipe"
         android:text="+"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />

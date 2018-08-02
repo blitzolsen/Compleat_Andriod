@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="horizontal"
+    android:padding="16dp"
+    tools:context=".EnterRecipe">
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:id="@+id/recipeName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:hint="Recipe Name" />
+
+        <Spinner
+            android:id="@+id/recipeType1"
+            android:paddingTop="16dp"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@id/recipeName"
+            android:layout_toLeftOf="@+id/recipeType2"
+            android:entries="@array/recipeType" />
+
+        <Spinner
+            android:id="@+id/recipeType2"
+            android:paddingTop="16dp"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_below="@id/recipeName"
+            android:entries="@array/recipeType2" />
+
+        <Spinner
+            android:id="@+id/tag1"
+            android:paddingTop="16dp"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_toLeftOf="@+id/tag2"
+            android:layout_below="@id/recipeType1"
+            android:entries="@array/recipeTags" />
+
+        <Spinner
+            android:id="@+id/tag2"
+            android:paddingTop="16dp"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_below="@id/recipeType2"
+            android:entries="@array/recipeTags2" />
+
+        <EditText
+            android:id="@+id/ingredientName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tag1"
+            android:ems="10"
+            android:paddingTop="32dp"
+            android:hint="Ingredient Name" />
+
+        <EditText
+            android:id="@+id/ingredientQuantity"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/ingredientName"
+            android:layout_marginRight="0dp"
+            android:layout_toLeftOf="@+id/quantityFraction"
+            android:ems="10"
+            android:hint="Quantity"
+            android:paddingTop="16dp" />
+
+        <Spinner
+            android:id="@+id/quantityFraction"
+            android:paddingTop="16dp"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:layout_below="@id/ingredientName"
+            android:layout_toLeftOf="@+id/quantityType"
+            android:entries="@array/fractions" />
+        <Spinner
+            android:id="@+id/quantityType"
+            android:paddingTop="16dp"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_below="@id/ingredientName"
+            android:entries="@array/measurement_units_array" />
+        <Spinner
+            android:id="@+id/ingredientFoodGroup"
+            android:paddingTop="20dp"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@id/ingredientQuantity"
+            android:layout_toLeftOf="@+id/addAnotherIngredient"
+            android:entries="@array/food_group" />
+
+        <Button
+            android:id="@+id/addAnotherIngredient"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_below="@id/ingredientQuantity"
+            android:background="@color/colorPrimary"
+            android:paddingTop="20dp"
+            android:text="+"
+            android:textSize="12sp" />
+    </RelativeLayout>
+    <LinearLayout
+        android:id="@+id/ingredientsContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"></LinearLayout>
+    <RelativeLayout
+        android:id="@+id/btnContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+    <Button
+        android:id="@+id/doneBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:background="@color/colorPrimary"
+        android:paddingTop="8dp"
+        android:text="Done"
+        android:textSize="12sp" />
+    </RelativeLayout>
+    </LinearLayout>
+</ScrollView>
+</LinearLayout>

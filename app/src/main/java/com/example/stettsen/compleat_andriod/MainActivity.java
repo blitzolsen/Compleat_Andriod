@@ -1,5 +1,6 @@
 package com.example.stettsen.compleat_andriod;
 
+import android.content.Intent;
 import android.support.design.widget.TabLayout;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -113,5 +114,9 @@ public class MainActivity extends AppCompatActivity {
             // Show 4 total pages.
             return 4;
         }
+    }
+    public void addRecipe(View view){
+        Intent enterRecipe = new Intent(this, EnterRecipe.class);
+        startActivity(enterRecipe);
     }
 }
