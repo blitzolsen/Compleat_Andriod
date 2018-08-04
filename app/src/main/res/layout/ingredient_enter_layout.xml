@@ -40,5 +40,6 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/remove"
         android:layout_toEndOf="@+id/amountType"
-        android:text="Food Type" />
+        android:text="Food Type"
+        android:layout_toRightOf="@+id/amountType" />
 </RelativeLayout>

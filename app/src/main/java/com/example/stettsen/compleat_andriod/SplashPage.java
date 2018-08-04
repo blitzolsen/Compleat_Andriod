@@ -11,7 +11,7 @@ import android.widget.TextView;
 public class SplashPage extends AppCompatActivity {
 
     private static String FILE = "CookBookDB.json";
-    AnimationDrawable watermelonAnimation;
+    AnimationDrawable loadAnimation;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,10 +19,12 @@ public class SplashPage extends AppCompatActivity {
         setContentView(R.layout.activity_splash_page);
         TextView progressStatus = findViewById(R.id.progressStatus);
         ProgressBar progressBar = findViewById(R.id.splashScreenProgressBar);
-        /*ImageView dancing_Watermelon = (ImageView) findViewById(R.id.dancingWatermelon);
-        dancing_Watermelon.setBackgroundResource(R.drawable.dancing_watermelon);
-        watermelonAnimation = (AnimationDrawable) dancing_Watermelon.getBackground();
-        watermelonAnimation.start();*/
+
+        ImageView animationView = (ImageView) findViewById(R.id.loadAnimation);
+        animationView.setBackgroundResource(R.drawable.compleat_load_logo);
+        loadAnimation = (AnimationDrawable) animationView.getBackground();
+        loadAnimation.start();
+
         boolean done = false;
 
         Thread newThread = new Thread() {
