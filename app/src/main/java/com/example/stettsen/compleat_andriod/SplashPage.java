@@ -21,7 +21,7 @@ public class SplashPage extends AppCompatActivity {
         ProgressBar progressBar = findViewById(R.id.splashScreenProgressBar);
 
         ImageView animationView = (ImageView) findViewById(R.id.loadAnimation);
-        animationView.setBackgroundResource(R.drawable.compleat_load_logo);
+        animationView.setBackgroundResource(R.drawable.load_image);
         loadAnimation = (AnimationDrawable) animationView.getBackground();
         loadAnimation.start();
 
