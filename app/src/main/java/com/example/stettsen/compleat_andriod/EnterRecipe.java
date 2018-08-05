@@ -3,9 +3,11 @@ package com.example.stettsen.compleat_andriod;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.constraint.ConstraintLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
@@ -17,14 +19,13 @@ public class EnterRecipe extends AppCompatActivity {
     public static final String PREFS = "com.blogspot.team16byui.mealmaster";
     public static final String TAG = "tag";
     Recipe recipe;
-
-    Button addIngredientBtn;
-    LinearLayout ingredientContainer;
+    ConstraintLayout cL;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_enter_recipe);
+        cL = (ConstraintLayout) findViewById(R.id.enterRecipeConstraintLayout);
     }
 
     public void getRecipeInfo(View v) {
@@ -45,6 +46,11 @@ public class EnterRecipe extends AppCompatActivity {
         Spinner tag2 = (Spinner) findViewById(R.id.tag2);
         recipe.setTag2(tag2.getSelectedItem().toString());
 
+
+    }
+    public void addIngredient(){
+        EditText ingredientName = new EditText(this);
+        ConstraintLayout.LayoutParams params = new ConstraintLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
 
     }
 
