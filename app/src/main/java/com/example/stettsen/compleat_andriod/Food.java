@@ -13,6 +13,12 @@ public class Food {
     private boolean inCart;
 
     public Food() {
+        setName("");
+        setQuantity(0);
+        quantityFraction = new Fraction();
+        setBarcode("");
+        setCalories(0);
+        setFoodGroup("");
         inCart = false;
     }
 

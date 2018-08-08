@@ -2,44 +2,62 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
+
     <Button
         android:id="@+id/remove"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentRight="true"
-        android:text="Remove"/>
+        android:background="@color/colorAccent"
+        android:text="Remove" />
 
     <EditText
-        android:id="@+id/ingredientNameOut"
+        android:id="@+id/ingredientName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
-        android:layout_toLeftOf="@id/remove" />
+        android:layout_toLeftOf="@id/remove"
+        android:hint="Ingredient Name" />
 
     <EditText
         android:id="@+id/quantity"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_below="@+id/remove"
-        android:text="Ex 4"
-        android:layout_alignParentLeft="true" />
+        android:layout_marginTop="16dp"
+        android:hint="Quantity"
+        android:inputType="number" />
 
-    <EditText
-        android:id="@+id/amountType"
-        android:layout_width="wrap_content"
+    <Spinner
+        android:id="@+id/fraction"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/remove"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="16dp"
         android:layout_toEndOf="@+id/quantity"
-        android:text="Amount Type"
-        android:layout_toRightOf="@+id/quantity" />
+        android:layout_toRightOf="@id/quantity"
+        android:entries="@array/fractions"
+        android:text="Amount Type" />
 
-    <EditText
-        android:id="@+id/foodType"
-        android:layout_width="wrap_content"
+    <Spinner
+        android:id="@+id/amountType"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/remove"
-        android:layout_toEndOf="@+id/amountType"
-        android:text="Food Type"
-        android:layout_toRightOf="@+id/amountType" />
+        android:layout_below="@+id/fraction"
+        android:layout_marginTop="24dp"
+        android:entries="@array/measurement_units_array"
+        android:text="Amount Type" />
+
+    <Spinner
+        android:id="@+id/foodType"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/amountType"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="24dp"
+        android:entries="@array/food_group"
+        android:text="Food Type" />
 </RelativeLayout>

@@ -3,33 +3,67 @@ package com.example.stettsen.compleat_andriod;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.constraint.ConstraintLayout;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.LinearLayoutCompat;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
+import android.widget.ListView;
 import android.widget.Spinner;
 import android.widget.Toast;
 
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Iterator;
+import java.util.List;
+import java.util.ListIterator;
+
 public class EnterRecipe extends AppCompatActivity {
 
-    public static final String PREFS = "com.blogspot.team16byui.mealmaster";
+    public static final String PREFS = "com.example.stettsen.compleat_andriod";
     public static final String TAG = "tag";
     Recipe recipe;
-    ConstraintLayout cL;
+    private ListView listView;
+    private EnterIngredientListAdapter adapter;
+    private List<Food> ingredients;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_enter_recipe);
-        cL = (ConstraintLayout) findViewById(R.id.enterRecipeConstraintLayout);
+        Food food = new Food();
+        ingredients = new ArrayList<>();
+        ingredients.add(food);
     }
 
-    public void getRecipeInfo(View v) {
+    @Override
+    public void onResume(){
+
         recipe = Recipe.getCleanInstance();
+        listView = (ListView)findViewById(R.id.ingredientsContainer);
+
+        adapter = new EnterIngredientListAdapter(this, (List<Food>) ingredients);
+        listView.setAdapter(adapter);
+/*
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                shoppingList.getFoodByPosition(position).toggleInCart();
+                adapter.notifyDataSetChanged();
+            }
+        });*/
+        super.onResume();
+    }
+
+
+    public void getRecipeInfo(View v) {
+
 
         EditText recipeNameEditText = (EditText) findViewById(R.id.recipeName);
         recipe.setName(recipeNameEditText.getText().toString());
@@ -48,9 +82,10 @@ public class EnterRecipe extends AppCompatActivity {
 
 
     }
-    public void addIngredient(){
-        EditText ingredientName = new EditText(this);
-        ConstraintLayout.LayoutParams params = new ConstraintLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+    public void addIngredient(View view){
+        Food food = new Food();
+        ingredients.add(food);
+        adapter.notifyDataSetChanged();
 
     }
 
