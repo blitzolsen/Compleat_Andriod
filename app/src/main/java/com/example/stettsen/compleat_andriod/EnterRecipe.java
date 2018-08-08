@@ -80,7 +80,8 @@ public class EnterRecipe extends AppCompatActivity {
         Spinner tag2 = (Spinner) findViewById(R.id.tag2);
         recipe.setTag2(tag2.getSelectedItem().toString());
 
-
+        Intent enterRecipe = new Intent(this, ViewCookbook.class);
+        startActivity(enterRecipe);
     }
     public void addIngredient(View view){
         Food food = new Food();
