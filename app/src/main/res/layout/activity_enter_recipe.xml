@@ -57,154 +57,153 @@
         </android.support.design.widget.TabLayout>
     </android.support.design.widget.AppBarLayout>
 
-    <ScrollView
+    <!--<ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/appbar">-->
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/enterRecipeConstraintLayout"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toBottomOf="@id/appbar">
 
-        <android.support.constraint.ConstraintLayout
-            android:id="@+id/enterRecipeConstraintLayout"
+        <EditText
+            android:id="@+id/recipeName"
+            android:layout_width="0dp"
+            android:layout_height="54dp"
+            android:layout_marginBottom="8dp"
+            android:layout_marginEnd="84dp"
+            android:layout_marginLeft="84dp"
+            android:layout_marginRight="84dp"
+            android:layout_marginStart="84dp"
+            android:layout_marginTop="0dp"
+            android:ems="10"
+            android:hint="Name"
+            android:inputType="textPersonName"
+            app:layout_constraintBottom_toTopOf="@+id/recipeType1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Spinner
+            android:id="@+id/recipeType1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:layout_marginEnd="32dp"
+            android:layout_marginLeft="32dp"
+            android:layout_marginRight="32dp"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="8dp"
+            android:entries="@array/recipeType"
+            app:layout_constraintBottom_toTopOf="@+id/recipeType2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/recipeName" />
+
+        <Spinner
+            android:id="@+id/recipeType2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:layout_marginEnd="32dp"
+            android:layout_marginLeft="32dp"
+            android:layout_marginRight="32dp"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="8dp"
+            android:entries="@array/recipeType2"
+            app:layout_constraintBottom_toTopOf="@+id/tag1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/recipeType1" />
+
+        <Spinner
+            android:id="@+id/tag1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_marginLeft="32dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="8dp"
+            android:entries="@array/recipeTags"
+            app:layout_constraintEnd_toStartOf="@+id/tag2"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/recipeType2" />
+
+        <Spinner
+            android:id="@+id/tag2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="32dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="32dp"
+            android:layout_marginStart="8dp"
+            android:entries="@array/recipeTags2"
+            app:layout_constraintBaseline_toBaselineOf="@+id/tag1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/tag1" />
+
+        <TextView
+            android:id="@+id/ingredient1text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:text="Ingredients"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tag1" />
+
+        <ListView
+            android:id="@+id/ingredientsContainer"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent">
+            android:layout_marginEnd="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            app:layout_constraintBottom_toTopOf="@+id/addIngredientBtn"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ingredient1text">
 
-            <EditText
-                android:id="@+id/recipeName"
-                android:layout_width="0dp"
-                android:layout_height="54dp"
-                android:layout_marginBottom="8dp"
-                android:layout_marginEnd="84dp"
-                android:layout_marginLeft="84dp"
-                android:layout_marginRight="84dp"
-                android:layout_marginStart="84dp"
-                android:layout_marginTop="0dp"
-                android:ems="10"
-                android:hint="Name"
-                android:inputType="textPersonName"
-                app:layout_constraintBottom_toTopOf="@+id/recipeType1"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+        </ListView>
 
-            <Spinner
-                android:id="@+id/recipeType1"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="8dp"
-                android:layout_marginEnd="32dp"
-                android:layout_marginLeft="32dp"
-                android:layout_marginRight="32dp"
-                android:layout_marginStart="32dp"
-                android:layout_marginTop="8dp"
-                android:entries="@array/recipeType"
-                app:layout_constraintBottom_toTopOf="@+id/recipeType2"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/recipeName" />
+        <Button
+            android:id="@+id/addIngredientBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="48dp"
+            android:layout_marginLeft="32dp"
+            android:layout_marginStart="32dp"
+            android:background="@color/colorAccent"
+            android:onClick="addIngredient"
+            android:paddingLeft="4dp"
+            android:paddingRight="4dp"
+            android:text="Add Ingredient"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
 
-            <Spinner
-                android:id="@+id/recipeType2"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="8dp"
-                android:layout_marginEnd="32dp"
-                android:layout_marginLeft="32dp"
-                android:layout_marginRight="32dp"
-                android:layout_marginStart="32dp"
-                android:layout_marginTop="8dp"
-                android:entries="@array/recipeType2"
-                app:layout_constraintBottom_toTopOf="@+id/tag1"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/recipeType1" />
+        <Button
+            android:id="@+id/doneBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="32dp"
+            android:layout_marginRight="32dp"
+            android:background="@color/colorAccent"
+            android:onClick="getRecipeInfo"
+            android:text="Done"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
 
-            <Spinner
-                android:id="@+id/tag1"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="8dp"
-                android:layout_marginLeft="32dp"
-                android:layout_marginRight="8dp"
-                android:layout_marginStart="32dp"
-                android:layout_marginTop="8dp"
-                android:entries="@array/recipeTags"
-                app:layout_constraintEnd_toStartOf="@+id/tag2"
-                app:layout_constraintHorizontal_bias="0.5"
-                app:layout_constraintHorizontal_chainStyle="packed"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/recipeType2" />
+    </android.support.constraint.ConstraintLayout>
 
-            <Spinner
-                android:id="@+id/tag2"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="32dp"
-                android:layout_marginLeft="8dp"
-                android:layout_marginRight="32dp"
-                android:layout_marginStart="8dp"
-                android:entries="@array/recipeTags2"
-                app:layout_constraintBaseline_toBaselineOf="@+id/tag1"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/tag1" />
-
-            <TextView
-                android:id="@+id/ingredient1text"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="24dp"
-                android:text="Ingredients"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tag1" />
-
-            <ListView
-                android:id="@+id/ingredientsContainer"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="16dp"
-                android:layout_marginLeft="16dp"
-                android:layout_marginRight="16dp"
-                android:layout_marginStart="16dp"
-                app:layout_constraintBottom_toTopOf="@id/doneBtn"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/ingredient1text">
-
-            </ListView>
-
-            <Button
-                android:id="@+id/doneBtn"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="32dp"
-                android:layout_marginRight="32dp"
-                android:background="@color/colorAccent"
-                android:onClick="getRecipeInfo"
-                android:text="Done"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/ingredientsContainer" />
-
-            <Button
-                android:id="@+id/addIngredientBtn"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="32dp"
-                android:layout_marginStart="32dp"
-                android:background="@color/colorAccent"
-                android:onClick="addIngredient"
-                android:paddingLeft="4dp"
-                android:paddingRight="4dp"
-                android:text="Add Ingredient"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/ingredientsContainer" />
-
-        </android.support.constraint.ConstraintLayout>
-
-    </ScrollView>
+   <!-- </ScrollView>-->
 
     <android.support.v4.view.ViewPager
         android:id="@+id/container"

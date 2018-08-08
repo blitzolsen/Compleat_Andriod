@@ -50,6 +50,8 @@ public class EnterRecipe extends AppCompatActivity {
 
         adapter = new EnterIngredientListAdapter(this, (List<Food>) ingredients);
         listView.setAdapter(adapter);
+
+
 /*
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
